@@ -85,7 +85,7 @@ def validate_packet_size(session, package):
     # Calculate if this entry wouldn't exceed the OpenTTD packet size if
     # we would transmit this over the wire.
 
-    size = 1 + 4 + 4  # content-type, content-id, filesize
+    size = 1 + 4 + 4 + 4  # content-type, content-id, filesize, upload-date
     size += len(session.get("name", package.get("name", ""))) + 2
     size += len(session.get("version", "")) + 2
     size += len(session.get("url", package.get("url", ""))) + 2
